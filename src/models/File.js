@@ -16,7 +16,7 @@ const File = new mongoose.Schema({
 });
 
 File.virtual('url').get(function(){
-    return `https://omnistack-maicon.herokuapp.com/files/${encodeURIComponent(this.path)}`;
+    return `https://s3.amazonaws.com/omnistack/${encodeURIComponent(this.path)}`;
 });
 
 module.exports = mongoose.model('File', File);
